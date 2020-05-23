@@ -1,8 +1,8 @@
 # Gator-Sports
 ## Dependencies:
 '''
-> python 3.8 or later
-> pip3 command tool
+python 3.8 or later
+pip3 command tool
 '''
 ## How to Run:
 '''
