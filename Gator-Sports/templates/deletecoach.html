@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    <link rel="stylesheet" href="/static/index.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="#home">Gator Sports!</a>
+        <a href="{{url_for('home')}}">Home</a>
+        <div class="dropdown">
+          <button class="dropbtn">Search<i class="fa fa-caret-down"></i></button>
+          <div class="dropdown-content">
+            <a href="{{url_for('searchcomp')}}">Scheduled Competitions</a>
+            <a href="{{url_for('searchsports')}}">SFSU Sports</a>
+            <a href="{{url_for('searchcoach')}}">Coaches</a>
+            <a href="{{url_for('searchlocations')}}">Venues</a>
+            <a href="{{url_for('searchticket')}}">Ticket Sales</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Insert<i class="fa fa-caret-down"></i></button>
+          <div class="dropdown-content">
+            <a href="{{url_for('insertcomp')}}">Insert Competitions</a>
+            <a href="{{url_for('insertsport')}}">Add a new Sport</a>
+            <a href="{{url_for('insertticket')}}">Buy Tickets</a>
+            <a href="{{url_for('insertcoach')}}">Add a Coach</a>
+            <a href="{{url_for('insertloc')}}">Add a new Venue</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Delete<i class="fa fa-caret-down"></i></button>
+          <div class="dropdown-content">
+            <a href="{{url_for('deletecomp')}}">Cancel Competitions</a>
+            <a href="{{url_for('deletesport')}}">Remove a Sport</a>
+            <a href="{{url_for('deletecoach')}}">Remove a Coach</a>
+            <a href="{{url_for('deleteloc')}}">Remove a Venue</a>
+            <a href="{{url_for('deleteticket')}}">Cancel Ticket Purchase</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Update<i class="fa fa-caret-down"></i></button>
+          <div class="dropdown-content">
+            <a href="{{url_for('updatecomp')}}">Update Competition</a>
+            <a href="{{url_for('updatesport')}}">Update a Sport</a>
+            <a href="{{url_for('updatecoach')}}">Update a Coach</a>
+            <a href="{{url_for('updateticket')}}">Update a Ticket</a>
+          </div>
+        </div>
+        <a href="{{ url_for('logout') }}">Exit <i class="fas fa-sign-out-alt"></i></a>
+      </div>
+    <h1>
+        <center>Gator Sports Competitions</center>
+    </h1>
+    <center>
+        <p>When deleting, enter the correct name, email, and sport.</p>
+    </center>
+    <center>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Coach Email</th>
+                    <th>Sport</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in value %}
+                <tr>
+                    <td>{{row[1]}}</td>
+                    <td>{{row[2]}}</td>
+                    <td>{{row[3]}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </center> </br>
+    <form class="example" method="post" action="" style="margin:auto;max-width:600px">
+        <input type="text" placeholder="Enter the name" name="name" required>
+        <input type="text" placeholder="Enter the coach email" name="coach_email" required>
+        <input type="text" placeholder="Enter the sport" name="type_of_sport" required>
+        <button type="submit">Delete</button>
+        </br>
+</body>
+
+</html>
