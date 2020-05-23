@@ -1,7 +1,7 @@
 # Gator-Sports
 ## Dependencies:
 `1. python 3.8 or later
- 2. pip3 command tool'
+ 2. pip3 command tool
 
 ## How to Run:
   1. git clone repo
