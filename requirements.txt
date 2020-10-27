@@ -1,7 +1,7 @@
 appdirs==1.4.3
 cffi==1.14.0
 click==7.1.2
-cryptography==2.9.2
+cryptography==3.2
 distlib==0.3.0
 Django>=2.2.13
 dnspython==1.16.0
